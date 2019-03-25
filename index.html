@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!--reset css-->
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <!--my stylesheet-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Guess Game</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-light bg-light">
+            <h1>Guess The Capital</h1>
+        </nav>
+    </header>
+    <div class="row">
+        <div class="col-8 position-relative">
+            <img src="assets/images/us-states-and-capitals-50-states-map-with-capitals-inspirational-united-states-map-capitals-of-us-states-and-capitals.jpg" class="img-fluid" id="capital-pic">
+            <button type="button" onclick="newWord()" id="start-button" class="btn btn-transparent position-absolute visible start"></button>
+            <div class="position-absolute invisible" id="capital-info-div">
+                <h1 id="capital-info-h1"></h1>
+                <p id="capital-info-p"></p>
+            </div>
+        </div>
+        <div class="col-4">
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container">
+                    <h1 class="display-4">How To Play</h1>
+                    <p class="lead">Click on Colorado to start the game, and Reset to start over</p>
+                    <p>Word: <span id="hidden-word"></span></p>
+                    <p>Remaining Guesses: <span id="remaining-guesses"></span></p>
+                    <p>Wins: <span id="wins"></span></p>
+                    <p>Incorrect Guesses: <span id="bad-guesses"></span></p>
+                    <button type="button" onclick="resetGame()" id="reset-button" class="btn btn-primary btn-lg invisible">Reset</button>
+                    <button type="button" onclick="newWord()" id="next-word" class="btn btn-primary btn-lg invisible">Play Again</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="assets/javascript/game.js"></script>
+</body>
+
+</html>
