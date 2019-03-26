@@ -8,5 +8,14 @@ button.start {
     background-color: transparent;
 }
 
+.image-div {
+    overflow: hidden;
+    justify-content: center;
+    align-content: center;
+}
 
+img {
+    max-height: 350px;
+
+}
 

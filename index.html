@@ -14,36 +14,54 @@
 </head>
 
 <body>
-    <header>
-        <nav class="navbar navbar-light bg-light">
-            <h1>Guess The Capital</h1>
-        </nav>
-    </header>
     <div class="row">
-        <div class="col-8 position-relative">
-            <img src="assets/images/us-states-and-capitals-50-states-map-with-capitals-inspirational-united-states-map-capitals-of-us-states-and-capitals.jpg" class="img-fluid" id="capital-pic">
-            <button type="button" onclick="newWord()" id="start-button" class="btn btn-transparent position-absolute visible start"></button>
-            <div class="position-absolute invisible" id="capital-info-div">
-                <h1 id="capital-info-h1"></h1>
-                <p id="capital-info-p"></p>
-            </div>
+        <!--div to house the capital picture-->
+        <div class="col-5 position-relative bg-light image-div">
+            <img class="img-fluid rounded mx-auto" id="capital-pic"
+                src="assets/images/us-states-and-capitals-50-states-map-with-capitals-inspirational-united-states-map-capitals-of-us-states-and-capitals.jpg">
+            <button type="button" onclick="newWord()" id="start-button"
+                class="btn btn-transparent position-absolute visible start"></button>
         </div>
-        <div class="col-4">
-            <div class="jumbotron jumbotron-fluid">
-                <div class="container">
-                    <h1 class="display-4">How To Play</h1>
-                    <p class="lead">Click on Colorado to start the game, and Reset to start over</p>
-                    <p>Word: <span id="hidden-word"></span></p>
+        <!--div to house the stats, and information about the state-->
+        <div class="col-2">
+            <div class="row">
+                <!--stats-->
+                <div class="col-12 bg-info">
                     <p>Remaining Guesses: <span id="remaining-guesses"></span></p>
                     <p>Wins: <span id="wins"></span></p>
-                    <p>Incorrect Guesses: <span id="bad-guesses"></span></p>
-                    <button type="button" onclick="resetGame()" id="reset-button" class="btn btn-primary btn-lg invisible">Reset</button>
-                    <button type="button" onclick="newWord()" id="next-word" class="btn btn-primary btn-lg invisible">Play Again</button>
+                </div>
+            </div>
+            <!--hidden information about the state-->
+            <div class="row">
+                <div class="col-10 invisible bg-light" id="capital-info-div">
+                    <h1 id="capital-info-h1"></h1>
+                    <p id="capital-info-p"></p>
                 </div>
             </div>
         </div>
+        <!--another picture - the attraction of the state picture-->
+        <div class="col-5 image-div">
+            <img class="img-fluid bg-light rounded mx-auto" id="attraction-pic" src="assets/images/e6VDMp1.jpg">
+        </div>
     </div>
-<script src="assets/javascript/game.js"></script>
+    <div class="row">
+        <!--reset button-->
+        <div class="col-3 bg-light">
+            <button type="button" onclick="resetGame()" id="reset-button"
+                class="btn btn-primary btn-lg invisible">Reset</button>
+        </div>
+        <!--area for the hidden word and guesses-->
+        <div class="col-6 bg-light text-center">
+                <h3>Word: <span id="hidden-word"></span></h3>
+                <h3>Incorrect Guesses: <span id="bad-guesses"></span></h3>
+        </div>
+        <!--play again button-->
+        <div class="col-3 bg-light">
+            <button type="button" onclick="newWord()" id="next-word" class="btn btn-primary btn-lg invisible">Play
+                Again</button>
+        </div>
+    </div>
+    <script src="assets/javascript/game.js"></script>
 </body>
 
 </html>
