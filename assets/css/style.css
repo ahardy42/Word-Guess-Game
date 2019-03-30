@@ -1,21 +1,52 @@
-button.start {
-    top: 38%;
-    left: 33%;
-    width: 12%;
-    height: 12%;
-    /* border: 1px solid black; */
-    transform: rotate(6deg);
-    background-color: transparent;
+body {
+    background-color: #D8D4D5;
+    background-image: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
 }
 
-.image-div {
-    overflow: hidden;
-    justify-content: center;
-    align-content: center;
+.container {
+    background-color: #ACAD94;
+    color: #F79824;
+    border: 2px solid #6E7271;
+    border-radius: 1em;
+}
+
+.navbar {
+    background-color: #31522A;
+    color: #F79824;
+    opacity: 0.8;
+    border-bottom: 10px solid #6E7271;
+}
+
+.card, img {
+    border-radius: 1em;
+    border: 2px solid #31522A;
 }
 
 img {
-    max-height: 350px;
-
+    margin: 20px 10px;
 }
 
+button {
+    margin: 10px;
+    color: #F79824;
+    border-color: #F79824;
+    border-radius: 0.5em;
+}
+
+button:hover {
+    background-color: #F79824;
+    color: #ffffff;
+}
+
+h2.click-me {
+    position: absolute;
+    color: #31522A;
+    transform: rotate(-15deg);
+    margin-left: -104px;
+    top: 30%;
+    left: 50%;
+    border-radius: 1em;
+    border: 2px solid #31522A;
+    padding: 30px;
+    opacity: 0.6;
+}
