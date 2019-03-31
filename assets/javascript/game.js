@@ -15,7 +15,7 @@ var capitalsArray = [
 ];
 
 // setting variables to be used in the game 
-var currentWord;
+var currentWord = "";
 var currentHiddenWord = [];
 var numWins = 0;
 var numGuesses = 12;
@@ -80,7 +80,6 @@ document.onkeyup = function guess(event) {
             if (isWin) {
                 numWins++;
                 updateInfo();
-                timer();
             }
         } else {
             array.push(guess);
@@ -90,13 +89,14 @@ document.onkeyup = function guess(event) {
     // if, at the end of the for loop, the array is the same length as the hidden word array, then the guess must
     // not have been correct.  This triggers the addition of guess to the bad guesses array, and a guess count decrement.
     // if you have no more guesses, the info for the capital is revealed, but wins are not increased. 
-    if (array.length === currentHiddenWord.length) {
+    if (array.length === currentHiddenWord.length && !badGuesses.includes(guess)) {
         badGuesses.push(guess);
         document.getElementById("bad-guesses").innerHTML = badGuesses.join(", ");
         numGuesses--;
         document.getElementById("remaining-guesses").innerHTML = numGuesses;
         if (numGuesses === 0) {
             updateInfo();
+            document.getElementById("hidden-word").innerHTML = currentWord;
         }
     }
 }
@@ -119,7 +119,14 @@ function newWord() {
     for (j = capitalsArray[i].name.length; j > 0; j--) {
         currentHiddenWord.push("_");
     }
-    document.getElementById("hidden-word").innerHTML = currentHiddenWord.join("  ");
+    var space = currentWord.indexOf(" ");
+    if (space !== -1) {
+        currentHiddenWord.splice(space, 1, "    ");
+    }
+    var hiddenWordString = currentHiddenWord.join("  ");
+    console.log("the hidden word string is " + hiddenWordString);
+    console.log("the word is " + currentWord);
+    document.getElementById("hidden-word").textContent = hiddenWordString;
     document.getElementById("capital-info-div").className = "card my-3 invisible";
     // showing buttons and setting guess numbers each time a new word is chosen. 
     moveButton();
@@ -155,17 +162,3 @@ function updateInfo() {
     displayWins();
 }
 
-function timer() {
-    var now = new Date();
-    var later = now.getSeconds() + 10;
-    for (x = 0; x < 10; x++) {
-        var timerInterval = setTimeout(function () {
-            var newNow = new Date();
-            var timeTillNewWord = later - newNow.getSeconds();
-            document.getElementById("next-word").textContent = timeTillNewWord;
-            console.log(timeTillNewWord);
-        }, 1000);
-    }
-    newWord();
-    document.getElementById("next-word").textContent = "Play Again";
-}
