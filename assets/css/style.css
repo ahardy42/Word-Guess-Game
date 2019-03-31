@@ -51,3 +51,6 @@ h2.click-me {
     opacity: 0.6;
 }
 
+#hidden-word {
+    white-space: pre;
+}

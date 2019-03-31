@@ -18,7 +18,7 @@
         <!--header-->
         <div class="col-12 mb-4">
             <nav class="navbar navbar-light">
-                <h1 class="">Word Guess Game</h1>
+                <h1 class="">Guess The Capital City!</h1>
             </nav>
         </div>
     </div>
@@ -37,12 +37,31 @@
                     </div>
                     <div class="card-body">
                         <h5 class="card-title" id="capital-info-p"></h5>
+                        <p>Fun Fact from: <a
+                                href="http://mentalfloss.com/article/55169/50-facts-about-50-state-capitals"
+                                target="_blank">50 Facts About the 50 State Capitals</a></p>
                     </div>
                 </div>
             </div>
             <!--div to hold the stats and info for the game-->
             <div class="col-5">
-                <div class="card my-5">
+                <!-- instructions for the game-->
+                <div class="card my-5" id="instructions">
+                    <div class="card-header">
+                        Guess which capital city...
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">How To Play:</h5>
+                        <p class="card-text">After clicking the map, use the keyboard to guess letters to fill in the
+                            blanks of the hidden word(s). Guess all the letters without running out of guesses, and you
+                            win!</p>
+                        <p class="card-text">When you win, or lose, some information about the city will be displayed
+                            below the picture.</p>
+                        <p class="card-text">Click "Play Again" to select a new word, but keep wins, or "Reset" to start
+                            over.</p>
+                    </div>
+                </div>
+                <div class="card my-5 d-none" id="stats">
                     <div class="card-header">
                         Game Stats
                     </div>
@@ -51,7 +70,7 @@
                         <p class="card-text">Remaining Guesses: <span id="remaining-guesses"></span></p>
                     </div>
                 </div>
-                <div class="card my-5">
+                <div class="card my-5 d-none" id="word-information">
                     <div class="card-header">
                         Hidden Word
                     </div>
@@ -66,8 +85,7 @@
                 </div>
             </div>
         </div>
-    </div>
-    <script src="assets/javascript/game.js"></script>
+        <script src="assets/javascript/game.js"></script>
 </body>
 
 </html>
